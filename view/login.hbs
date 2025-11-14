@@ -1,0 +1,25 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Login</title>
+</head>
+<body>
+
+<h1>Login</h1>
+
+{{#if error}}
+    <p style="color: red;">{{error}}</p>
+{{/if}}
+
+<form action="/login" method="post">
+    <p>Usuário:</p>
+    <input type="text" name="usuario" required>
+
+    <p>Senha:</p>
+    <input type="password" name="senha" required>
+
+    <p><input type="submit" value="Entrar"/></p>
+</form>
+</body>
+</html>
