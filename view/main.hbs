@@ -2,35 +2,46 @@
 <html>
 <head>
     <meta charset="utf-8"/>
-    <title>{{title}}</title>
+    <title>Painel Principal</title>
 </head>
 <body>
 
-    <h1>Lista de produtos</h1>
+<h1>Lista de produtos</h1>
 
-    <ul>
-        {{#database}}
-            <li>{{nome}} — R$ {{preco}} — {{tamanho}}</li>
-        {{/database}}
-    </ul>
+<ul>
+    {{#each produtos}}
+        <li>
+            {{nome}} — R$ {{preco}} — {{tamanho}}
+            {{#if categoriaNome}} (Categoria: {{categoriaNome}}) {{/if}}
+        </li>
+    {{/each}}
+</ul>
 
+<hr>
 
-    <hr>
+<h2>Adicionar produto</h2>
 
-    <h2>Adicionar produto</h2>
+<form action="/addProduto" method="post">
+    
+    <p>Nome:</p>
+    <input type="text" name="nome" required>
 
-    <form action="/addProduto" method="post">
-        <p>Nome:</p>
-        <input type="text" name="nome" required>
+    <p>Preço:</p>
+    <input type="number" name="preco" step="0.01" required>
 
-        <p>Preço:</p>
-        <input type="number" name="preco" step="0.01" required>
+    <p>Tamanho / Peso / Litros:</p>
+    <input type="text" name="tamanho" required>
 
-        <p>Tamanho / Peso / Litros:</p>
-        <input type="text" name="tamanho" required>
+    <p>Categoria:</p>
+    <select name="categoria" required>
+        <option value="">Selecione...</option>
+        {{#each categorias}}
+            <option value="{{_id}}">{{nome}}</option>
+        {{/each}}
+    </select>
 
-        <p><button type="submit">Adicionar</button></p>
-    </form>
+    <p><button type="submit">Adicionar</button></p>
+</form>
 
 </body>
 </html>
