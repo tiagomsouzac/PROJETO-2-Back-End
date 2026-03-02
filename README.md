@@ -1,6 +1,6 @@
 # Projeto 2 (Express + MongoDB)
 
-Este é um projeto de back-end desenvolvido com Node.js, Express e MongoDB, criado como parte do segundo desafio/back-end da minha formação. A aplicação consiste em um servidor HTTP que expõe endpoints REST para operações básicas de backend, estruturando lógica de rotas, integração com banco de dados e organização de camadas de aplicação.
+Este é um projeto de back-end desenvolvido com Node.js, Express e MongoDB, criado como parte do segundo desafio/back-end da minha formação. A aplicação consiste em um servidor HTTP que expõe endpoints para operações básicas de backend, estruturando lógica de rotas, integração com banco de dados e organização de camadas de aplicação.
 
 ## Principais Funcionalidades
 
